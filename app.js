@@ -1,8 +1,17 @@
 const express = require('express');
 var app = express();
 
+app.locals.pretty = true;
+app.set('view engine', 'pug');
+app.set('views', './views');
+app.get('/template', function(req, res){
+  res.render('temp', {time:Date(), _title:'pug'});
+})
+
 //static file service setting
 app.use(express.static('public'));
+
+
 app.get('/', function(req, res){
   res.send('hello home page');
 });
