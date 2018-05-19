@@ -25,7 +25,19 @@ app.get('/topic', function(req, res){
   res.send(output);
 })
 
+//practice semantic url
+app.get('/semantic/:id/:mode', function(req, res){
+  var semantic = ['first is...', 'second is...', 'third is...'];
 
+  var output = `
+    <a href="/semantic/0">one</a><br>
+    <a href="/semantic/1">two</a><br>
+    <a href="/semantic/2">three</a><br>
+    ${semantic[req.params.id] + ', ' + req.params.mode}
+  `;
+
+  res.send(output);
+})
 
 
 
