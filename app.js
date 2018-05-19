@@ -11,6 +11,7 @@ app.get('/template', function(req, res){
 //static file service setting
 app.use(express.static('public'));
 
+//practice query String
 app.get('/topic', function(req, res){
   var topics = ['first is...', 'second is...', 'third is...'];
 
