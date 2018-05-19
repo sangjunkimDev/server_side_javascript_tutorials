@@ -11,6 +11,22 @@ app.get('/template', function(req, res){
 //static file service setting
 app.use(express.static('public'));
 
+app.get('/topic', function(req, res){
+  var topics = ['first is...', 'second is...', 'third is...'];
+
+  var output = `
+    <a href="/topic?id=0">one</a><br>
+    <a href="/topic?id=1">two</a><br>
+    <a href="/topic?id=2">three</a><br>
+    ${topics[req.query.id]}
+  `;
+
+  res.send(output);
+})
+
+
+
+
 
 app.get('/', function(req, res){
   res.send('hello home page');
