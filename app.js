@@ -39,7 +39,15 @@ app.get('/semantic/:id/:mode', function(req, res){
   res.send(output);
 })
 
-
+//practice form tag(post)
+app.get('/form', function(req, res){
+  res.render('form')
+})
+app.get('/form_receiver', function(req, res){
+  var title = req.query.title;
+  var description = req.query.description
+  res.send(title + ', ' + description)
+})
 
 app.get('/', function(req, res){
   res.send('hello home page');
